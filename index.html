@@ -1,15 +1,730 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/javascript/WOW-master/css/libs/animate.css">
+  <link rel="stylesheet" href="animate.css-master/animate.css-master/animate.css">
+  
 
   <title>Braj Bihari Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    ::-webkit-scrollbar {
+      width: 15px;
+      border: 3px solid black;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px grey;
+      border-radius: 10px;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #E0A800;
+      border-radius: 10px;
+    }
+
+    .navbar {
+      background: #2B2C2C !important;
+    }
+
+    .navbar .navbar-nav .nav-item .nav-link {
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      padding-left: 15px;
+      font-weight: 400;
+      position: relative;
+      transition-delay: 0.8s;
+    }
+
+    .navbar .navbar-nav .nav-item .nav-link:hover {
+      color: #E0A800;
+      transition: 1s;
+    }
+
+    .navbar .navbar-nav .nav-item .nav-link:hover::after {
+      content: " ";
+      width: 34px;
+      height: 3px;
+      position: absolute;
+      background-color: #E0A800;
+      top: 79%;
+      left: 23%;
+      transition: 1s;
+
+
+    }
+
+    .pb-4,
+    .py-4 {
+      padding-bottom: 0.5rem !important;
+    }
+
+    .pt-4,
+    .py-4 {
+      padding-top: 0.5rem !important;
+    }
+
+    .navbar .navbar-brand {
+      color: #E0A800;
+      font-size: 45px;
+      box-sizing: border-box;
+      font-weight: bolder;
+    }
+
+    .wapper {
+      background: #2B2C2C;
+      width: 100%;
+      height: 100%;
+    }
+
+    .wapper-img {
+      padding-top: 50px;
+    }
+
+    .wapper-text h1 {
+
+      font-family: 'Poppins', sans-serif;
+      font-weight: 900;
+      font-size: 70px;
+      color: white;
+    }
+
+    .wapper-text p {
+      font-family: 'Poppins', sans-serif;
+      font-size: 25px;
+      color: white;
+    }
+
+    .wapper .btn {
+      font-family: 'Poppins', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      line-height: 60px;
+      text-align: center;
+      text-transform: capitalize;
+      color: white;
+      padding: 0 50px;
+
+    }
+
+    .wapper .btn:hover {
+      border: 2px solid #E0A800;
+      background: #2B2C2C;
+      color: #E0A800;
+      font-weight: 700;
+    }
+
+    .about-area {
+      width: 100%;
+      height: 100%;
+      background: #232424;
+    }
+
+    .about-area h1 {
+      color: rgb(199, 197, 197);
+      font-family: 'Poppins', sans-serif;
+      font-weight: bolder;
+      word-spacing: 3px;
+      font-size: 56px;
+    }
+
+    .about-area .abouthead::after {
+      content: " ";
+      width: 138px;
+      height: 5px;
+      position: absolute;
+      background-color: #E0A800;
+      top: 57%;
+      left: 27%;
+    }
+
+    .about-area .abouthead::before {
+      content: " ";
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      background-color: #888888;
+      top: 30%;
+      left: 23%;
+      border-radius: 50%;
+      opacity: 0.2;
+
+    }
+
+    .about-area p {
+      color: rgb(199, 197, 197);
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .about-area .btn {
+      font-family: 'Poppins', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      line-height: 60px;
+      text-align: center;
+      text-transform: capitalize;
+      color: white;
+      padding: 0 40px;
+      margin-left: 8px;
+    }
+
+    .about-area .btncv {
+      font-family: 'Poppins', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      line-height: 60px;
+      text-align: center;
+      text-transform: capitalize;
+      color: white;
+      padding: 0 35px;
+      margin-left: 8px;
+      background: #232424;
+    }
+
+    .about-area .btncv:hover {
+      background: #E0A800;
+      color: white;
+    }
+
+    .services-area {
+      width: 100%;
+      height: 100%;
+      background: #2B2C2C;
+    }
+
+    .services-area h1 {
+      color: rgb(199, 197, 197);
+      font-size: 56px;
+      font-weight: bold;
+      font-family: 'Poppins', sans-serif;
+      position: relative;
+
+
+    }
+
+    .progress-bar {
+
+      background-color: #E0A800;
+    }
+
+    .services-area h1::after {
+      content: " ";
+      width: 138px;
+      height: 5px;
+      position: absolute;
+      background-color: #E0A800;
+      top: 98%;
+      left: 31%;
+    }
+
+    .services-area p {
+      color: rgb(199, 197, 197);
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .services-area .show_img1 {
+      background-image:
+        linear-gradient(to bottom, rgba(91, 114, 245, 0.52), rgba(209, 87, 178, 0.73)), url('/images/1.jpg');
+      width: 90%;
+      height: 300px;
+      background-size: cover;
+      color: white;
+      padding: 55px;
+      color: white;
+      border-radius: 5px;
+    }
+
+    .services-area .show_img1 img {
+      vertical-align: middle;
+      border-style: none;
+      width: 52px;
+    }
+
+    .work-area {
+      width: 100%;
+      height: 100%;
+      background: #232424;
+    }
+
+    .work-area h1 {
+      color: rgb(199, 197, 197);
+      font-size: 56px;
+      font-weight: 700;
+      font-family: 'Poppins', sans-serif;
+      position: relative;
+    }
+
+    .work-area h1::after {
+      content: " ";
+      width: 138px;
+      height: 5px;
+      position: absolute;
+      background-color: #E0A800;
+      top: 69%;
+      left: 35%;
+    }
+
+    .workexp {
+      width: 100%;
+      height: 300px;
+      background: #2B2C2C;
+      color: rgb(199, 197, 197);
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .workexp .btn {
+      font-family: 'Poppins', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      line-height: 60px;
+      text-align: center;
+      text-transform: capitalize;
+      color: white;
+      padding: 0 50px;
+    }
+
+    .contact {
+      width: 100%;
+      height: 100%;
+      background: #232424;
+      color: white;
+    }
+
+    .contact h1 {
+      font-size: 50px;
+      color: rgb(199, 197, 197);
+      position: relative;
+    }
+
+    .contact h1::after {
+      content: " ";
+      width: 138px;
+      height: 5px;
+      position: absolute;
+      background-color: #E0A800;
+      top: 88%;
+      left: 39%;
+    }
+
+    .contact h5 {
+      font-size: 25px;
+      color: rgb(199, 197, 197);
+    }
+
+    .contact span {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 100;
+      color: rgb(199, 197, 197);
+
+    }
+
+    .sociallink i {
+      display: inline-block;
+      padding: 6px;
+      font-size: larger;
+      color: white;
+
+    }
+
+    .sociallink i:hover {
+      color: #E0A800;
+
+    }
+
+    .contact input {
+      background: #363737;
+      width: 100%;
+      height: 50px;
+      border: none;
+    }
+
+    .contact textarea {
+      background: #363737;
+      width: 100%;
+      border: none;
+    }
+
+    .contact label {
+      color: #808383;
+    }
+
+    .contact .btn {
+      font-family: 'Poppins', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      line-height: 60px;
+      text-align: center;
+      text-transform: capitalize;
+      color: white;
+      padding: 0 50px;
+      background: #E0A800;
+      border: none !important;
+    }
+
+    footer {
+      width: 100%;
+      height: 100%;
+      background: #434444;
+    }
+
+    footer span {
+      color: #E0A800;
+    }
+
+    @media (max-width: 991px) {
+      .wapper-text h1 {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 900;
+        font-size: 70px;
+        color: white;
+        padding-top: 100px;
+        padding-left: 20px;
+      }
+
+      .wapper-text p {
+        font-family: 'Poppins', sans-serif;
+        font-size: 22px;
+        color: white;
+        padding-left: 20px;
+      }
+
+      .wapper .btn {
+        font-family: 'Poppins', sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 1.6px;
+        line-height: 45px;
+        text-align: center;
+        text-transform: capitalize;
+        color: white;
+        padding: 0px 30px;
+        margin-left: 20px;
+      }
+
+      .about-area h1 {
+        font-size: 41px;
+        position: relative;
+      }
+
+      .about-area .abouthead::after {
+        content: " ";
+        width: 138px;
+        height: 4px;
+        position: absolute;
+        background-color: #E0A800;
+        top: 109%;
+        left: 0%;
+      }
+
+      .about-area p {
+        color: rgb(199, 197, 197);
+        font-family: 'Poppins', sans-serif;
+        padding: 17px;
+        margin-top: -48px;
+        font-size: 14px;
+      }
+
+      .about-area .btn {
+        font-family: 'Poppins', sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 1.6px;
+        line-height: 45px;
+        text-align: center;
+        text-transform: capitalize;
+        color: white;
+        padding: 0px 22px;
+        margin-left: 8px;
+      }
+
+      .about-area .btncv {
+        font-family: 'Poppins', sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 1.6px;
+        line-height: 45px;
+        text-align: center;
+        text-transform: capitalize;
+        color: white;
+        padding: 0px 14px;
+        margin-left: 8px;
+      }
+
+      .services-area h1 {
+        color: rgb(199, 197, 197);
+        font-size: 45px;
+        font-weight: bold;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      .services-area p {
+        color: rgb(199, 197, 197);
+        font-family: 'Poppins', sans-serif;
+        font-size: 15px;
+        padding: 3px;
+      }
+
+      .services-area .show_img1 {
+        background-image: linear-gradient(to bottom, rgba(91, 114, 245, 0.52), rgba(209, 87, 178, 0.73)), url(/images/1.jpg);
+        width: 99%;
+        height: 295px;
+        background-size: cover;
+        color: white;
+        padding: 34px;
+        color: white;
+        border-radius: 5px;
+        margin-bottom: 25px;
+      }
+
+      .services-area .show_img2 {
+        background-image: linear-gradient(to bottom, rgba(91, 114, 245, 0.52), rgba(209, 87, 178, 0.73)), url(/images/2.jpg);
+        width: 99%;
+        height: 295px;
+        background-size: cover;
+        color: white;
+        padding: 34px;
+        color: white;
+        border-radius: 5px;
+      }
+
+      .work-area h1 {
+        color: rgb(199, 197, 197);
+        font-size: 41px;
+        font-weight: 700;
+        font-family: 'Poppins', sans-serif;
+        margin-top: -53px;
+      }
+
+      .heading {
+        text-align: center !important;
+        font-size: 33px;
+      }
+
+      .workexp .btn {
+        font-family: 'Poppins', sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 1.6px;
+        line-height: 52px;
+        text-align: center;
+        text-transform: capitalize;
+        color: white;
+        padding: 0px 38px;
+      }
+
+      .contact h1 {
+        font-size: 42px;
+        color: rgb(199, 197, 197);
+        margin-top: -33px;
+        margin-bottom: 33px;
+      }
+
+      .contact h5 {
+        font-size: 25px;
+        color: rgb(199, 197, 197);
+        padding-left: 25px;
+      }
+
+      .form-group {
+        margin-bottom: 0rem;
+        margin-top: 17px;
+        padding: 10px;
+      }
+
+      .contact .btn {
+        font-family: 'Poppins', sans-serif;
+        font-size: 17px;
+        font-weight: 700;
+        letter-spacing: 1.6px;
+        line-height: 51px;
+        text-align: center;
+        text-transform: capitalize;
+        color: white;
+        padding: 0 20px;
+        background: #E0A800;
+        border: none !important;
+      }
+
+      .text-center {
+        text-align: center !important;
+        font-size: 14px;
+      }
+
+      .link {
+        padding: 15px;
+      }
+
+      .sociallink {
+        padding: 15px;
+      }
+
+      .heading {
+        text-align: center !important;
+        font-size: 25px;
+      }
+
+      .navbar-dark .navbar-nav .active>.nav-link,
+      .navbar-dark .navbar-nav .nav-link.active,
+      .navbar-dark .navbar-nav .nav-link.show,
+      .navbar-dark .navbar-nav .show>.nav-link {
+        color: #fff;
+        padding-left: 147px;
+        margin-top: 10px;
+      }
+
+      .about-area .btncv a {
+        text-decoration: none;
+        color: white;
+      }
+
+      .services-area h1::after {
+        content: " ";
+        width: 138px;
+        height: 5px;
+        position: absolute;
+        background-color: #E0A800;
+        top: 96%;
+        left: 25%;
+      }
+
+      .work-area h1::after {
+        content: " ";
+        width: 138px;
+        height: 5px;
+        position: absolute;
+        background-color: #E0A800;
+        top: 69%;
+        left: 15%;
+      }
+
+      .contact h1::after {
+        content: " ";
+        width: 138px;
+        height: 5px;
+        position: absolute;
+        background-color: #E0A800;
+        top: 88%;
+        left: 20%;
+      }
+
+      .navbar .navbar-brand {
+        color: #E0A800;
+        font-size: 50px;
+        box-sizing: border-box;
+        font-weight: bolder;
+        padding-left: 13px;
+      }
+
+      .navbar {
+        background: #2B2C2C !important;
+      }
+
+      .navbar-dark .navbar-nav .active>.nav-link,
+      .navbar-dark .navbar-nav .nav-link.active,
+      .navbar-dark .navbar-nav .nav-link.show,
+      .navbar-dark .navbar-nav .show>.nav-link {
+        color: #fff;
+        padding-left: 82px;
+        margin-top: 10px;
+      }
+
+      .wapper-img {
+        margin-top: -14px;
+      }
+
+      .wapper-text h1 {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 900;
+        font-size: 70px;
+        color: white;
+        padding-top: 155px;
+        padding-left: 20px;
+      }
+
+      .services-area .show_img1 .head {
+        font-size: 25px;
+        margin-bottom: 0px;
+      }
+
+      .services-area h1 {
+        color: rgb(199, 197, 197);
+        font-size: 35px;
+        font-weight: bold;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      .services-area h1::after {
+        content: " ";
+        width: 138px;
+        height: 5px;
+        position: absolute;
+        background-color: #E0A800;
+        top: 109%;
+        left: 8%;
+      }
+
+      .work-area h1::after {
+        content: " ";
+        width: 138px;
+        height: 5px;
+        position: absolute;
+        background-color: #E0A800;
+        top: 69%;
+        left: 10%;
+      }
+
+      .contact h1::after {
+        content: " ";
+        width: 138px;
+        height: 5px;
+        position: absolute;
+        background-color: #E0A800;
+        top: 95%;
+        left: 16%;
+      }
+
+      .contact span {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 100;
+        color: rgb(199, 197, 197);
+        font-size: 13px;
+      }
+
+      .about-area .abouthead::before {
+        content: " ";
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        background-color: #888888;
+        top: 30%;
+        left: 23%;
+        border-radius: 50%;
+        opacity: 0.2;
+        display: none;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -49,7 +764,7 @@
         <div class="col-md-6 col-sm-12 col-lg-6 d-flex align-items-center wow bounceInLeft " data-wow-duration="4s">
           <div class="wapper-text">
             <h1>I’m Braj Bihari</h1>
-            <p class="type"></p>
+            <p class="typed"></p>
             <button type="button" class="btn btn-warning">Hire Me</button>
           </div>
         </div>
@@ -71,15 +786,23 @@
           <h1 class="abouthead">About Me</h1>
         </div>
         <div class="col-md-6 py-5 wow bounceInRight" data-wow-duration="4s">
-          <p>Hello I am Braj Bihari sharma I have completed polytechnic Diploma for computer science and I am really passionate about learning and designing new things. I am trained under Nine Pages Techsolution PVT LTD. I am currently looking for a full-time job. <br><br> I have a good knowledge of Photoshop, Networking, Web Technology, Adobe XD and FIGMA. <br>
+          <p>Hello I am Braj Bihari sharma I have completed polytechnic Diploma for computer science and I am really
+            passionate about learning and designing new things. I am trained under Nine Pages Techsolution PVT LTD. I am
+            currently looking for a full-time job. <br><br> I have a good knowledge of Photoshop, Networking, Web
+            Technology, Adobe XD and FIGMA. <br>
 
-            A creative and innovative Entery-level Full stack developer, passionate about building and learning design and advance technologies. Posses the ability  to evalute and manipulate design as per client expecatation. Have a strong focus on efficient, secure design and open to contributing software to success of the organization.
+            A creative and innovative Entery-level Full stack developer, passionate about building and learning design
+            and advance technologies. Posses the ability to evalute and manipulate design as per client expecatation.
+            Have a strong focus on efficient, secure design and open to contributing software to success of the
+            organization.
 
-           </p>
-         <div class="pt-3">
-         <a href="#potfoliyo"> <button type="button" class="btn btn-warning">View Work</button></a>
-          <button type="button" class="btn btncv btn-warning"> <a href="/resume/Braj Bihari Resume.docx" download="BrajBihari" class="download" style="text-decoration: none; color: white;"> Download CV </a></button>
-         </div>
+          </p>
+          <div class="pt-3">
+            <a href="#potfoliyo"> <button type="button" class="btn btn-warning">View Work</button></a>
+            <button type="button" class="btn btncv btn-warning"> <a href="/resume/Braj Bihari Resume.docx"
+                download="BrajBihari" class="download" style="text-decoration: none; color: white;"> Download CV
+              </a></button>
+          </div>
 
         </div>
       </div>
@@ -88,7 +811,7 @@
 
   <section class="services-area" id="services">
     <div class="container py-5">
-      <h1 class="text-center">Services & Skills</h1> 
+      <h1 class="text-center">Services & Skills</h1>
       <p class="text-center pt-3">
         I CAN PROVIDE MANY TYPES OF SERVICES SUCH AS</p>
       <div class="row py-5">
@@ -96,29 +819,35 @@
           <div class="show_img1">
             <img src="images/code_icon.png">
             <h2 class="pt-1 head">Web Development</h2>
-            <p class="text-white">We use new technology to create website and use programming languages such us HTML ,CSS, Javascript, Es6,JQuery PHP and MYSQL. and we create website with the help of wordpress.</p>
+            <p class="text-white">We use new technology to create website and use programming languages such us HTML
+              ,CSS, Javascript, Es6,JQuery PHP and MYSQL. and we create website with the help of wordpress.</p>
           </div>
         </div>
         <div class="col-md-6 wow bounceInRight" data-wow-duration="4s">
           <h6 class="text-white">Front End Developer</h6>
           <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">90%</div>
+            <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="25" aria-valuemin="0"
+              aria-valuemax="100">90%</div>
           </div>
           <h6 class="text-white pt-3">Back End Developer</h6>
           <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">75%</div>
+            <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="25" aria-valuemin="0"
+              aria-valuemax="100">75%</div>
           </div>
           <h6 class="text-white pt-3">Web Design</h6>
           <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">80%</div>
+            <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="25" aria-valuemin="0"
+              aria-valuemax="100">80%</div>
           </div>
           <h6 class="text-white pt-3">Wordpress Developer</h6>
           <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">70%</div>
+            <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="25" aria-valuemin="0"
+              aria-valuemax="100">70%</div>
           </div>
           <h6 class="text-white pt-3">Logo Design</h6>
           <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">50%</div>
+            <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="25" aria-valuemin="0"
+              aria-valuemax="100">50%</div>
           </div>
         </div>
       </div>
@@ -134,25 +863,28 @@
           <div class="row row-cols-1 row-cols-md-2">
             <div class="col mb-4 wow bounceInLeft" data-wow-duration="4s">
               <div class="card">
-               <a href="https://brajbiharisharma.github.io/awesomewebpage.github.com/"> <img src="images/Screenshot (30).png" class="card-img-top" alt="..."></a>
-                
+                <a href="https://brajbiharisharma.github.io/awesomewebpage.github.com/"> <img
+                    src="images/Screenshot (30).png" class="card-img-top" alt="..."></a>
+
               </div>
             </div>
             <div class="col mb-4 wow bounceInRight" data-wow-duration="4s">
               <div class="card">
-              <a href="http://codewithbunny.epizy.com/?i=1"><img src="images/Screenshot (31).png" class="card-img-top" alt="..."></a>
+                <a href="http://codewithbunny.epizy.com/?i=1"><img src="images/Screenshot (31).png" class="card-img-top"
+                    alt="..."></a>
               </div>
             </div>
             <div class="col mb-4 wow bounceInLeft" data-wow-duration="4s">
               <div class="card">
-              <a href="https://brajbiharisharma.github.io/resposivewebpage.github/"> <img src="images/Screenshot (32).png" class="card-img-top" alt="..."></a> 
-                
+                <a href="https://brajbiharisharma.github.io/resposivewebpage.github/"> <img
+                    src="images/Screenshot (32).png" class="card-img-top" alt="..."></a>
+
               </div>
             </div>
             <div class="col mb-4 wow bounceInRight" data-wow-duration="4s">
               <div class="card">
                 <img src="images/Screenshot (33).png" class="card-img-top" alt="...">
-                
+
               </div>
             </div>
           </div>
@@ -168,8 +900,8 @@
         <div class="col-md-12 flex-column justify-content-center align-items-center">
           <h1 class="text-center heading">Have Any Project In Mind?</h1>
           <div class="d-flex justify-content-center align-items-center pt-3">
-          <button type="button" class="btn btn-warning ">Hire Me</button>
-        </div>
+            <button type="button" class="btn btn-warning ">Hire Me</button>
+          </div>
         </div>
       </div>
     </div>
@@ -183,17 +915,18 @@
         <div class="col-md-4 wow bounceInLeft" data-wow-duration="4s">
           <h5>Contact info</h5>
           <div class="pt-3 link">
-          <i class="fas fa-map-marker-alt"> &ThickSpace; <span> House no. 707 Sector 11 Sikandra, Agra</span></i> <br><br>
-          <i class="fas fa-envelope"> &ThickSpace; <span> brajbiharisharma888@gmail.com </span></i><br><br>
-          <i class="fas fa-phone"> &ThickSpace; <span> +9760495063 </span></i><br><br>
-          <i class="fas fa-globe-asia"> &ThickSpace; <span> www.bunnyboy.com </span></i><br><br>
+            <i class="fas fa-map-marker-alt"> &ThickSpace; <span> House no. 707 Sector 11 Sikandra, Agra</span></i>
+            <br><br>
+            <i class="fas fa-envelope"> &ThickSpace; <span> brajbiharisharma888@gmail.com </span></i><br><br>
+            <i class="fas fa-phone"> &ThickSpace; <span> +9760495063 </span></i><br><br>
+            <i class="fas fa-globe-asia"> &ThickSpace; <span> www.bunnyboy.com </span></i><br><br>
           </div>
           <div class="sociallink">
-          <a href="https://www.facebook.com/profile.php?id=100012134616328"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="https://www.linkedin.com/in/braj-bihari-sharma-634879192/"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://www.pinterest.ph/boybunny953/website-mockups/"><i class="fab fa-pinterest"></i></a>
-          <a href="https://github.com/Brajbiharisharma"><i class="fab fa-github"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100012134616328"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/braj-bihari-sharma-634879192/"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.pinterest.ph/boybunny953/website-mockups/"><i class="fab fa-pinterest"></i></a>
+            <a href="https://github.com/Brajbiharisharma"><i class="fab fa-github"></i></a>
           </div>
         </div>
         <div class="col-md-8 wow bounceInRight" data-wow-duration="4s">
@@ -212,50 +945,45 @@
                 </div>
               </div>
               <label for="exampleFormControlTextarea1">YOUR MESSAGE</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Type your message here"></textarea>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"
+                placeholder="Type your message here"></textarea>
               <button type="submit" class="btn btn-primary my-3">SEND MAIL</button>
             </div>
-           
-           
+
+
           </form>
         </div>
       </div>
     </div>
 
   </section>
- 
+
   <footer>
     <div class="container">
-        <p class="text-center text-white mb-0 py-3">Copyright © 2018 <span>boybunny953@gmail.com</span></p>
+      <p class="text-center text-white mb-0 py-3">Copyright © 2018 <span>boybunny953@gmail.com</span></p>
     </div>
   </footer>
-
-  <script src="/javascript/typed.js"></script>
+  <script src="typed.min.js"></script>
   <script>
-          var typed = new Typed(".type", {
-        strings: ["Front End Developer","Back End Developer","Freelancer","Web Designer"],
-        typeSpeed:100,
-        backSpeed:100,
-        loop: true,
-        
-        
-      });
-  </script>
-  <script src="/javascript/WOW-master/dist/wow.min.js"></script>
-  <script>
-  new WOW({
-    boxClass: 'wow',
-    animateClass: 'animated',
-    offset: 0,
-    mobile:true,
-    live:true
+    var typed = new Typed('.typed', {
+      strings:["Front End Developer", "Back End Developer", "Freelancer", "Web Designer"],
+      typeSpeed: 100,
+      backSpeed:100,
+      fadeOut: true,
+      loop:true
+    });
 
-  }).init();
   </script>
 
+<script src="wow.min.js"></script>
+  <script>
+    new WOW().init();
+    </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-    
+
 </body>
+
 
 </html>
